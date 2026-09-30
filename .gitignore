@@ -1,0 +1,8 @@
+node_modules/
+playlist_db.json
+shazam_music_db.json
+*.ogg
+*.mp3
+*.mp4
+*.wav
+.env

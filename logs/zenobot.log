@@ -1,0 +1,179 @@
+[2026-09-28T19:21:26.141Z] [INFO] Caricati con successo 3 comandi plugin (0 falliti).
+[2026-09-28T19:21:26.713Z] [ERROR] Unhandled Rejection: 401: Unauthorized
+[2026-09-28T19:24:05.480Z] [INFO] Caricati con successo 3 comandi plugin (0 falliti).
+[2026-09-28T19:24:06.621Z] [ERROR] Unhandled Rejection: Invalid Form Body
+application_id[NUMBER_TYPE_COERCE]: Value "il_tuo_application_id" is not snowflake.
+guild_id[NUMBER_TYPE_COERCE]: Value "id_del_server" is not snowflake.
+[2026-09-28T19:27:36.809Z] [INFO] Caricati con successo 3 comandi plugin (0 falliti).
+[2026-09-28T19:27:37.670Z] [ERROR] Unhandled Rejection: Unknown Application
+[2026-09-28T19:32:30.087Z] [INFO] Caricati con successo 3 comandi plugin (0 falliti).
+[2026-09-28T19:32:33.592Z] [INFO] Zeno connesso a Discord come 18K-BOT#1725.
+[2026-09-28T19:37:11.589Z] [INFO] Arresto richiesto (SIGINT).
+[2026-09-28T19:37:28.713Z] [INFO] Caricati con successo 4 comandi plugin (0 falliti).
+[2026-09-28T19:37:30.988Z] [INFO] Zeno connesso a Discord come 18K-BOT#1725.
+[2026-09-28T19:37:48.759Z] [INFO] Arresto richiesto (SIGINT).
+[2026-09-28T19:37:52.409Z] [INFO] Caricati con successo 4 comandi plugin (0 falliti).
+[2026-09-28T19:37:54.544Z] [INFO] Zeno connesso a Discord come 18K-BOT#1725.
+[2026-09-28T19:39:52.009Z] [ERROR] Interaction Error: Unknown interaction
+[2026-09-28T19:43:02.564Z] [INFO] Arresto richiesto (SIGINT).
+[2026-09-28T19:43:46.220Z] [INFO] Caricati con successo 5 comandi plugin (0 falliti).
+[2026-09-28T19:43:48.455Z] [INFO] Zeno connesso a Discord come 18K-BOT#1725.
+[2026-09-28T19:50:23.316Z] [INFO] Arresto richiesto (SIGINT).
+[2026-09-28T19:52:59.963Z] [INFO] Caricati con successo 5 comandi plugin (0 falliti).
+[2026-09-28T19:53:01.619Z] [INFO] Zeno connesso a Discord come 18K-BOT#1725.
+[2026-09-28T20:04:10.333Z] [INFO] Arresto richiesto (SIGINT).
+[2026-09-28T20:05:11.961Z] [INFO] Caricati con successo 6 comandi plugin (0 falliti).
+[2026-09-28T20:05:13.755Z] [INFO] Zeno connesso a Discord come 18K-BOT#1725.
+[2026-09-28T20:18:30.126Z] [INFO] Arresto richiesto (SIGINT).
+[2026-09-28T20:18:31.197Z] [INFO] Caricati con successo 6 comandi plugin (0 falliti).
+[2026-09-28T20:18:32.864Z] [INFO] Zeno connesso a Discord come 18K-BOT#1725.
+[2026-09-28T20:18:55.130Z] [INFO] Arresto richiesto (SIGINT).
+[2026-09-28T20:37:22.376Z] [INFO] Caricati con successo 6 comandi plugin (0 falliti).
+[2026-09-28T20:37:23.935Z] [INFO] Zeno connesso a Discord come 18K-BOT#1725.
+[2026-09-28T21:19:20.433Z] [INFO] Arresto richiesto (SIGINT).
+[2026-09-28T21:22:16.869Z] [INFO] Caricati con successo 6 comandi plugin (0 falliti).
+[2026-09-28T21:22:18.268Z] [INFO] Zeno connesso a Discord come 18K-BOT#1725.
+[2026-09-29T06:26:59.220Z] [INFO] Arresto richiesto (SIGINT).
+[2026-09-29T06:30:32.747Z] [INFO] Caricati con successo 6 comandi plugin (0 falliti).
+[2026-09-29T06:30:34.526Z] [INFO] Zeno connesso a Discord come 18K-BOT#1725.
+[2026-09-29T06:30:44.994Z] [INFO] Caricati con successo 6 comandi plugin (0 falliti).
+[2026-09-29T06:39:29.778Z] [INFO] Arresto richiesto (SIGINT).
+[2026-09-29T06:40:07.947Z] [INFO] Caricati con successo 7 comandi plugin (0 falliti).
+[2026-09-29T06:40:09.319Z] [INFO] Zeno connesso a Discord come 18K-BOT#1725.
+[2026-09-29T06:40:18.849Z] [INFO] Caricati con successo 7 comandi plugin (0 falliti).
+[2026-09-29T11:53:48.186Z] [INFO] Arresto richiesto (SIGINT).
+[2026-09-29T11:54:24.370Z] [INFO] Caricati con successo 8 comandi plugin (0 falliti).
+[2026-09-29T11:54:25.515Z] [INFO] Zeno connesso a Discord come 18K-BOT#1725.
+[2026-09-29T11:58:04.975Z] [INFO] Arresto richiesto (SIGINT).
+[2026-09-29T11:58:12.821Z] [INFO] Caricati con successo 8 comandi plugin (0 falliti).
+[2026-09-29T11:58:14.105Z] [INFO] Zeno connesso a Discord come 18K-BOT#1725.
+[2026-09-29T11:59:21.050Z] [INFO] Caricati con successo 8 comandi plugin (0 falliti).
+[2026-09-29T12:19:50.631Z] [INFO] Arresto richiesto (SIGINT).
+[2026-09-29T12:20:07.944Z] [INFO] Caricati con successo 9 comandi plugin (0 falliti).
+[2026-09-29T12:20:08.909Z] [INFO] Zeno connesso a Discord come 18K-BOT#1725.
+[2026-09-29T12:23:27.076Z] [INFO] Caricati con successo 9 comandi plugin (0 falliti).
+[2026-09-30T05:22:28.801Z] [INFO] Arresto richiesto (SIGINT).
+[2026-09-30T05:23:10.227Z] [INFO] Caricati con successo 9 comandi plugin (0 falliti).
+[2026-09-30T05:23:11.625Z] [INFO] Zeno connesso a Discord come 18K-BOT#1725.
+[2026-09-30T05:23:52.245Z] [INFO] Caricati con successo 9 comandi plugin (0 falliti).
+[2026-09-30T07:47:21.941Z] [INFO] Caricati con successo 9 comandi plugin (0 falliti).
+[2026-09-30T07:47:32.968Z] [INFO] Caricati con successo 9 comandi plugin (0 falliti).
+[2026-09-30T08:00:50.263Z] [INFO] Arresto richiesto (SIGINT).
+[2026-09-30T08:01:07.179Z] [INFO] Caricati con successo 10 comandi plugin (0 falliti).
+[2026-09-30T08:01:08.322Z] [INFO] Zeno connesso a Discord come 18K-BOT#1725.
+[2026-09-30T08:01:26.073Z] [INFO] Caricati con successo 10 comandi plugin (0 falliti).
+[2026-09-30T08:11:45.134Z] [INFO] Caricati con successo 10 comandi plugin (0 falliti).
+[2026-09-30T08:55:16.180Z] [INFO] Arresto richiesto (SIGINT).
+[2026-09-30T08:58:00.064Z] [INFO] Caricati con successo 11 comandi plugin (0 falliti).
+[2026-09-30T08:58:01.186Z] [INFO] Zeno connesso a Discord come 18K-BOT#1725.
+[2026-09-30T09:00:32.279Z] [INFO] Arresto richiesto (SIGINT).
+[2026-09-30T09:00:50.752Z] [INFO] Caricati con successo 11 comandi plugin (0 falliti).
+[2026-09-30T09:00:52.610Z] [INFO] Zeno connesso a Discord come 18K-BOT#1725.
+[2026-09-30T09:05:31.045Z] [INFO] Arresto richiesto (SIGINT).
+[2026-09-30T09:07:27.626Z] [INFO] Caricati con successo 11 comandi plugin (0 falliti).
+[2026-09-30T09:07:28.759Z] [INFO] Zeno connesso a Discord come 18K-BOT#1725.
+[2026-09-30T09:11:40.552Z] [INFO] Arresto richiesto (SIGINT).
+[2026-09-30T09:11:52.460Z] [INFO] Caricati con successo 11 comandi plugin (0 falliti).
+[2026-09-30T09:11:53.644Z] [INFO] Zeno connesso a Discord come 18K-BOT#1725.
+[2026-09-30T09:12:33.928Z] [INFO] Caricati con successo 11 comandi plugin (0 falliti).
+[2026-09-30T09:14:03.725Z] [INFO] Arresto richiesto (SIGINT).
+[2026-09-30T09:14:25.999Z] [INFO] Caricati con successo 11 comandi plugin (0 falliti).
+[2026-09-30T09:14:27.151Z] [INFO] Zeno connesso a Discord come 18K-BOT#1725.
+[2026-09-30T09:15:35.875Z] [INFO] Arresto richiesto (SIGINT).
+[2026-09-30T09:15:43.711Z] [INFO] Caricati con successo 11 comandi plugin (0 falliti).
+[2026-09-30T09:15:44.761Z] [INFO] Zeno connesso a Discord come 18K-BOT#1725.
+[2026-09-30T09:17:00.633Z] [INFO] Arresto richiesto (SIGINT).
+[2026-09-30T09:17:04.958Z] [ERROR] Plugin Error [like.js]: export default mancante o non è una funzione (trovato: object)
+[2026-09-30T09:17:05.237Z] [INFO] Caricati con successo 11 comandi plugin (1 falliti).
+[2026-09-30T09:17:06.343Z] [INFO] Zeno connesso a Discord come 18K-BOT#1725.
+[2026-09-30T09:17:23.829Z] [INFO] Arresto richiesto (SIGINT).
+[2026-09-30T09:17:32.667Z] [INFO] Caricati con successo 12 comandi plugin (0 falliti).
+[2026-09-30T09:17:33.939Z] [INFO] Zeno connesso a Discord come 18K-BOT#1725.
+[2026-09-30T09:19:39.210Z] [INFO] Arresto richiesto (SIGINT).
+[2026-09-30T09:19:50.817Z] [INFO] Caricati con successo 12 comandi plugin (0 falliti).
+[2026-09-30T09:19:52.062Z] [INFO] Zeno connesso a Discord come 18K-BOT#1725.
+[2026-09-30T11:43:24.700Z] [ERROR] Interaction Error: Cannot read properties of null (reading 'trim')
+[2026-09-30T11:47:42.391Z] [INFO] Arresto richiesto (SIGINT).
+[2026-09-30T11:48:02.911Z] [INFO] Caricati con successo 12 comandi plugin (0 falliti).
+[2026-09-30T11:48:04.073Z] [INFO] Zeno connesso a Discord come 18K-BOT#1725.
+[2026-09-30T11:50:29.222Z] [INFO] Arresto richiesto (SIGINT).
+[2026-09-30T11:50:42.436Z] [INFO] Caricati con successo 12 comandi plugin (0 falliti).
+[2026-09-30T11:50:43.938Z] [INFO] Zeno connesso a Discord come 18K-BOT#1725.
+[2026-09-30T11:53:32.826Z] [INFO] Arresto richiesto (SIGINT).
+[2026-09-30T11:53:43.584Z] [INFO] Caricati con successo 12 comandi plugin (0 falliti).
+[2026-09-30T11:53:44.770Z] [INFO] Zeno connesso a Discord come 18K-BOT#1725.
+[2026-09-30T11:59:48.790Z] [INFO] Arresto richiesto (SIGINT).
+[2026-09-30T12:00:38.699Z] [ERROR] Plugin Error [shazam.js]: Cannot find package 'node-shazam' imported from /data/data/com.termux/files/home/zeno-discord/plugins/shazam.js
+[2026-09-30T12:00:38.721Z] [INFO] Caricati con successo 12 comandi plugin (1 falliti).
+[2026-09-30T12:00:39.856Z] [INFO] Zeno connesso a Discord come 18K-BOT#1725.
+[2026-09-30T12:01:01.960Z] [INFO] Arresto richiesto (SIGINT).
+[2026-09-30T12:01:22.935Z] [ERROR] Plugin Error [shazam.js]: undefined
+[2026-09-30T12:01:22.954Z] [INFO] Caricati con successo 12 comandi plugin (1 falliti).
+[2026-09-30T12:01:24.416Z] [INFO] Zeno connesso a Discord come 18K-BOT#1725.
+[2026-09-30T12:01:51.110Z] [INFO] Arresto richiesto (SIGINT).
+[2026-09-30T12:02:03.011Z] [ERROR] Plugin Error [shazam.js]: export default mancante o non è una funzione (trovato: object)
+[2026-09-30T12:02:03.033Z] [INFO] Caricati con successo 12 comandi plugin (1 falliti).
+[2026-09-30T12:02:04.524Z] [INFO] Zeno connesso a Discord come 18K-BOT#1725.
+[2026-09-30T12:02:17.931Z] [INFO] Arresto richiesto (SIGINT).
+[2026-09-30T12:02:22.693Z] [ERROR] Plugin Error [shazam.js]: export default mancante o non è una funzione (trovato: object)
+[2026-09-30T12:02:22.706Z] [INFO] Caricati con successo 12 comandi plugin (1 falliti).
+[2026-09-30T12:02:24.468Z] [INFO] Zeno connesso a Discord come 18K-BOT#1725.
+[2026-09-30T12:02:48.156Z] [INFO] Arresto richiesto (SIGINT).
+[2026-09-30T12:03:04.309Z] [INFO] Caricati con successo 13 comandi plugin (0 falliti).
+[2026-09-30T12:03:05.546Z] [INFO] Zeno connesso a Discord come 18K-BOT#1725.
+[2026-09-30T12:14:02.114Z] [INFO] Arresto richiesto (SIGINT).
+[2026-09-30T12:15:21.102Z] [ERROR] Plugin Error [shazam.js]: Unexpected token '.'
+[2026-09-30T12:15:21.123Z] [INFO] Caricati con successo 12 comandi plugin (1 falliti).
+[2026-09-30T12:15:22.056Z] [INFO] Zeno connesso a Discord come 18K-BOT#1725.
+[2026-09-30T12:15:45.448Z] [INFO] Arresto richiesto (SIGINT).
+[2026-09-30T12:15:51.999Z] [INFO] Caricati con successo 13 comandi plugin (0 falliti).
+[2026-09-30T12:15:53.908Z] [INFO] Zeno connesso a Discord come 18K-BOT#1725.
+[2026-09-30T12:18:37.939Z] [INFO] Arresto richiesto (SIGINT).
+[2026-09-30T12:19:29.928Z] [ERROR] Plugin Error [shazam.js]: undefined
+[2026-09-30T12:19:29.945Z] [INFO] Caricati con successo 12 comandi plugin (1 falliti).
+[2026-09-30T12:19:30.997Z] [INFO] Zeno connesso a Discord come 18K-BOT#1725.
+[2026-09-30T12:20:18.962Z] [INFO] Arresto richiesto (SIGINT).
+[2026-09-30T12:20:25.993Z] [ERROR] Plugin Error [shazam.js]: undefined
+[2026-09-30T12:20:26.009Z] [INFO] Caricati con successo 12 comandi plugin (1 falliti).
+[2026-09-30T12:20:26.876Z] [INFO] Zeno connesso a Discord come 18K-BOT#1725.
+[2026-09-30T12:21:05.736Z] [INFO] Arresto richiesto (SIGINT).
+[2026-09-30T12:23:02.546Z] [ERROR] Plugin Error [shazam.js]: undefined
+[2026-09-30T12:23:02.568Z] [INFO] Caricati con successo 12 comandi plugin (1 falliti).
+[2026-09-30T12:23:03.511Z] [INFO] Zeno connesso a Discord come 18K-BOT#1725.
+[2026-09-30T12:23:03.968Z] [INFO] Arresto richiesto (SIGINT).
+[2026-09-30T12:28:23.330Z] [INFO] Caricati con successo 13 comandi plugin (0 falliti).
+[2026-09-30T12:28:24.320Z] [INFO] Zeno connesso a Discord come 18K-BOT#1725.
+[2026-09-30T12:28:40.407Z] [INFO] Caricati con successo 13 comandi plugin (0 falliti).
+[2026-09-30T12:29:27.399Z] [INFO] Arresto richiesto (SIGINT).
+[2026-09-30T12:41:06.474Z] [INFO] Caricati con successo 13 comandi plugin (0 falliti).
+[2026-09-30T12:41:07.649Z] [INFO] Zeno connesso a Discord come 18K-BOT#1725.
+[2026-09-30T12:42:42.179Z] [INFO] Arresto richiesto (SIGINT).
+[2026-09-30T12:42:57.128Z] [ERROR] Plugin Error [shazam.js]: La classe Recognizer non è stata trovata nel modulo shazamio-core.
+[2026-09-30T12:42:57.148Z] [INFO] Caricati con successo 12 comandi plugin (1 falliti).
+[2026-09-30T12:42:58.194Z] [INFO] Zeno connesso a Discord come 18K-BOT#1725.
+[2026-09-30T12:43:42.191Z] [INFO] Arresto richiesto (SIGINT).
+[2026-09-30T12:44:01.767Z] [INFO] Caricati con successo 13 comandi plugin (0 falliti).
+[2026-09-30T12:44:02.621Z] [INFO] Zeno connesso a Discord come 18K-BOT#1725.
+[2026-09-30T13:06:50.576Z] [INFO] Arresto richiesto (SIGINT).
+[2026-09-30T13:09:15.221Z] [INFO] Caricati con successo 13 comandi plugin (0 falliti).
+[2026-09-30T13:09:17.657Z] [INFO] Zeno connesso a Discord come 18K-BOT#1725.
+[2026-09-30T13:30:34.085Z] [INFO] Arresto richiesto (SIGINT).
+[2026-09-30T13:30:59.956Z] [INFO] Caricati con successo 13 comandi plugin (0 falliti).
+[2026-09-30T13:31:01.445Z] [INFO] Zeno connesso a Discord come 18K-BOT#1725.
+[2026-09-30T13:34:06.342Z] [INFO] Arresto richiesto (SIGINT).
+[2026-09-30T13:34:24.933Z] [INFO] Caricati con successo 13 comandi plugin (0 falliti).
+[2026-09-30T13:34:26.218Z] [INFO] Zeno connesso a Discord come 18K-BOT#1725.
+[2026-09-30T13:35:53.336Z] [INFO] Arresto richiesto (SIGINT).
+[2026-09-30T13:36:32.721Z] [INFO] Caricati con successo 13 comandi plugin (0 falliti).
+[2026-09-30T13:36:34.878Z] [INFO] Zeno connesso a Discord come 18K-BOT#1725.
+[2026-09-30T13:43:12.203Z] [INFO] Arresto richiesto (SIGINT).
+[2026-09-30T13:43:20.373Z] [ERROR] Plugin Error [text.js]: Cannot find package 'axios' imported from /data/data/com.termux/files/home/zeno-discord/plugins/text.js
+[2026-09-30T13:43:20.379Z] [INFO] Caricati con successo 13 comandi plugin (1 falliti).
+[2026-09-30T13:43:21.872Z] [INFO] Zeno connesso a Discord come 18K-BOT#1725.
+[2026-09-30T13:44:52.848Z] [INFO] Arresto richiesto (SIGINT).
+[2026-09-30T13:45:08.417Z] [INFO] Caricati con successo 14 comandi plugin (0 falliti).
+[2026-09-30T13:45:10.053Z] [INFO] Zeno connesso a Discord come 18K-BOT#1725.
+[2026-09-30T13:47:23.044Z] [INFO] Arresto richiesto (SIGINT).
+[2026-09-30T13:47:38.348Z] [INFO] Caricati con successo 14 comandi plugin (0 falliti).
+[2026-09-30T13:47:39.723Z] [INFO] Zeno connesso a Discord come 18K-BOT#1725.
+[2026-09-30T17:11:21.362Z] [INFO] Arresto richiesto (SIGINT).
