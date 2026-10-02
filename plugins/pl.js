@@ -10,16 +10,43 @@ import {
   ModalBuilder, TextInputBuilder, TextInputStyle,
 } from 'discord.js';
 
+// ───────────── TRACKER PROFILO ─────────────
+function trackPlay(userId, title, artist = 'Sconosciuto') {
+  try {
+    const PROFILES_DB = path.resolve('profiles_db.json');
+    let db = fs.existsSync(PROFILES_DB) ? JSON.parse(fs.readFileSync(PROFILES_DB, 'utf8')) : {};
+    if (!db[userId]) db[userId] = { stars: 0, topSongs: [] };
+
+    let cleanTitle = (title || 'Sconosciuto').trim();
+    let cleanArtist = (artist || 'Sconosciuto').trim();
+
+    if ((cleanArtist === 'Sconosciuto' || !cleanArtist) && cleanTitle.includes(' - ')) {
+      const parts = cleanTitle.split(' - ');
+      cleanArtist = parts[0].trim();
+      cleanTitle = parts.slice(1).join(' - ').trim();
+    }
+
+    const existing = db[userId].topSongs.find(s => s.title === cleanTitle && s.artist === cleanArtist);
+    if (existing) existing.count = (existing.count || 0) + 1;
+    else db[userId].topSongs.push({ title: cleanTitle, artist: cleanArtist, count: 1 });
+
+    if (typeof global.saveJsonAtomic === 'function') global.saveJsonAtomic(PROFILES_DB, db);
+    else fs.writeFileSync(PROFILES_DB, JSON.stringify(db, null, 2), 'utf8');
+  } catch (e) {
+    console.error('Errore tracking play:', e.message);
+  }
+}
+// ───────────── FINE TRACKER ─────────────
+
 const run = promisify(execFile);
 const PLAYLIST_DB = path.resolve('playlist_db.json');
-const MAX_UPLOAD = 10 * 1024 * 1024; // limite upload Discord
-const PAGE_SIZE = 10;                // brani per pagina nel menu (max 25)
+const MAX_UPLOAD = 10 * 1024 * 1024;
+const PAGE_SIZE = 10;
 
 global.plQueues = global.plQueues || {};
 global.plMerging = global.plMerging || new Set();
-global.plSetup = global.plSetup || new Map(); // uid -> tema scelto durante la creazione
+global.plSetup = global.plSetup || new Map();
 
-// ───────────── Profilo playlist (nome + decorazione) ─────────────
 const PROFILES = path.resolve('playlist_profiles.json');
 const THEMES = {
   viola:    { label: 'Viola Notte',  emoji: '💜', color: 0x9b59ff },
@@ -47,7 +74,37 @@ const setupTheme = (uid) => {
   return THEMES[id] ? id : 'viola';
 };
 
-// Pannello mostrato la prima volta (o con /pl personalizza)
+const tmp = (name) => path.join(os.tmpdir(), name);
+const rm = (p) => { try { if (p && fs.existsSync(p)) fs.rmSync(p, { recursive: true, force: true }); } catch {} };
+const clip = (s, n) => (s.length > n ? `${s.slice(0, n - 1)}…` : s);
+const safeName = (t) => (t || '').replace(/[^\w\s-]/g, '').trim().slice(0, 60) || 'zeno';
+const isInteraction = (ctx) => typeof ctx.isChatInputCommand === 'function';
+const cid = (action, uid, extra) => `pl:${action}:${uid}${extra !== undefined ? `:${extra}` : ''}`;
+
+const fmt = (s) => {
+  s = Math.round(s || 0);
+  if (!s) return '--:--';
+  const h = Math.floor(s / 3600), m = Math.floor((s % 3600) / 60), sec = s % 60;
+  const ss = String(sec).padStart(2, '0');
+  return h ? `${h}:${String(m).padStart(2, '0')}:${ss}` : `${m}:${ss}`;
+};
+
+const readDb = () => {
+  if (!fs.existsSync(PLAYLIST_DB)) return {};
+  try { return JSON.parse(fs.readFileSync(PLAYLIST_DB, 'utf8')); } catch { return {}; }
+};
+const saveDb = (data) => global.saveJsonAtomic(PLAYLIST_DB, data);
+
+async function openStatus(ctx, text) {
+  if (isInteraction(ctx)) {
+    if (!ctx.deferred && !ctx.replied) await ctx.reply(text);
+    else await ctx.editReply(text);
+    return (payload) => ctx.editReply(payload);
+  }
+  const msg = await ctx.reply(text);
+  return (payload) => msg.edit(payload);
+}
+
 function buildSetup(uid) {
   const cur = setupTheme(uid);
   const th = THEMES[cur];
@@ -85,40 +142,6 @@ function buildSetup(uid) {
   };
 }
 
-// ───────────── Utility ─────────────
-const readDb = () => {
-  if (!fs.existsSync(PLAYLIST_DB)) return {};
-  try { return JSON.parse(fs.readFileSync(PLAYLIST_DB, 'utf8')); } catch { return {}; }
-};
-const saveDb = (data) => global.saveJsonAtomic(PLAYLIST_DB, data);
-
-const tmp = (name) => path.join(os.tmpdir(), name);
-const rm = (p) => { try { if (p && fs.existsSync(p)) fs.rmSync(p, { recursive: true, force: true }); } catch {} };
-const clip = (s, n) => (s.length > n ? `${s.slice(0, n - 1)}…` : s);
-const safeName = (t) => (t || '').replace(/[^\w\s-]/g, '').trim().slice(0, 60) || 'zeno';
-const isInteraction = (ctx) => typeof ctx.isChatInputCommand === 'function';
-const cid = (action, uid, extra) => `pl:${action}:${uid}${extra !== undefined ? `:${extra}` : ''}`;
-
-const fmt = (s) => {
-  s = Math.round(s || 0);
-  if (!s) return '--:--';
-  const h = Math.floor(s / 3600), m = Math.floor((s % 3600) / 60), sec = s % 60;
-  const ss = String(sec).padStart(2, '0');
-  return h ? `${h}:${String(m).padStart(2, '0')}:${ss}` : `${m}:${ss}`;
-};
-
-// Risposta "di stato" modificabile, sia per slash/bottoni sia per messaggi col prefisso
-async function openStatus(ctx, text) {
-  if (isInteraction(ctx)) {
-    if (!ctx.deferred && !ctx.replied) await ctx.reply(text);
-    else await ctx.editReply(text);
-    return (payload) => ctx.editReply(payload);
-  }
-  const msg = await ctx.reply(text);
-  return (payload) => msg.edit(payload);
-}
-
-// ───────────── Spotify (senza client, come nell'originale) ─────────────
 const extractSpotifyTracksNoClient = async (url) => {
   try {
     const response = await fetch(url, {
@@ -187,7 +210,6 @@ async function fetchLinkTracks(link) {
   }).filter(Boolean);
 }
 
-// ───────────── Download audio (yt-dlp, senza shell) ─────────────
 async function downloadAudio(url, quality = '128K') {
   const base = tmp(`zeno_pl_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`);
   await run('yt-dlp', [
@@ -203,7 +225,6 @@ async function downloadAudio(url, quality = '128K') {
   return file;
 }
 
-// ───────────── Pannello playlist ─────────────
 function buildPanel(uid, page = 0) {
   const tracks = readDb()[uid] || [];
   if (!tracks.length) {
@@ -256,7 +277,6 @@ function buildPanel(uid, page = 0) {
   return { content: '', embeds: [embed], components: rows };
 }
 
-// ───────────── Azioni ─────────────
 async function addLink(ctx, uid, link) {
   if (!/^https?:\/\//i.test(link || '')) {
     return ctx.reply('❌ Inserisci un link valido dopo `add` (Esempio: `.pl add [link]`).');
@@ -311,6 +331,7 @@ async function playOne(i, index) {
     if (fs.statSync(file).size > MAX_UPLOAD) {
       return i.editReply('❌ Il file supera il limite di upload di Discord (10 MB).');
     }
+    trackPlay(i.user.id, track.title || 'Brano');
     await i.editReply({
       content: `🎧 **${track.title || 'Brano'}**`,
       files: [new AttachmentBuilder(file, { name: `${safeName(track.title)}.mp3` })],
@@ -323,7 +344,6 @@ async function playOne(i, index) {
   }
 }
 
-// Coda continua: i brani vengono inviati uno dopo l'altro nel canale
 async function processQueue(uid) {
   const q = global.plQueues[uid];
   if (!q) return;
@@ -335,12 +355,13 @@ async function processQueue(uid) {
     let file = null;
     try {
       file = await downloadAudio(track.url);
-      if (global.plQueues[uid] !== q) break; // fermata durante il download
+      if (global.plQueues[uid] !== q) break;
 
       if (fs.statSync(file).size > MAX_UPLOAD) {
         await q.channel.send(`⚠️ Saltato (supera i 10 MB): **${track.title}**`);
         continue;
       }
+      trackPlay(uid, track.title || 'Brano');
       await q.channel.send({
         content: `🎧 **${n}/${q.total}** • ${track.title || 'Brano'}`,
         files: [new AttachmentBuilder(file, { name: `${safeName(track.title)}.mp3` })],
@@ -366,7 +387,7 @@ async function startQueue(ctx, uid) {
   const channel = ctx.channel ?? await ctx.client.channels.fetch(ctx.channelId);
   global.plQueues[uid] = { tracks: [...tracks], total: tracks.length, channel };
   await ctx.reply(`▶️ Avvio riproduzione continua di ${tracks.length} brani!`);
-  processQueue(uid); // non attendere: gira in background
+  processQueue(uid);
 }
 
 async function stopQueue(ctx, uid) {
@@ -377,7 +398,6 @@ async function stopQueue(ctx, uid) {
   return ctx.reply('⚠️ Nessuna riproduzione in corso al momento.');
 }
 
-// Fusione in un unico file .m4a con capitoli
 async function mergePlaylist(ctx, uid, tracks) {
   if (global.plMerging.has(uid)) return ctx.reply('⚠️ Hai già una fusione in corso, attendi che finisca.');
   global.plMerging.add(uid);
@@ -407,6 +427,7 @@ async function mergePlaylist(ctx, uid, tracks) {
           dur = parseFloat(stdout.trim()) || 0;
         } catch {}
 
+        trackPlay(uid, t.title || `Brano ${i + 1}`);
         files.push(dest);
         titles.push(t.title || `Brano ${i + 1}`);
         durs.push(dur);
@@ -421,7 +442,6 @@ async function mergePlaylist(ctx, uid, tracks) {
       return await status('❌ Nessun brano è stato scaricato con successo. Riprova più tardi.');
     }
 
-    // Bitrate adattato per restare sotto il limite di upload
     const totalSec = durs.reduce((a, b) => a + b, 0) || 1;
     const kbps = Math.min(96, Math.floor((MAX_UPLOAD * 0.93 * 8) / 1000 / totalSec));
     if (kbps < 32) {
@@ -459,7 +479,6 @@ async function mergePlaylist(ctx, uid, tracks) {
       content: `✅ **Playlist fusa con successo!**\n\n🎵 **${files.length}** brani con capitoli\n📦 Dimensione: **${(size / 1048576).toFixed(2)} MB**\n\n💾 Salva il file e aprilo con VLC / Musicolet per vedere le tracce separate!`,
       files: [new AttachmentBuilder(out, { name: `Playlist_Zeno_${new Date().toISOString().slice(0, 10)}.m4a` })],
     };
-    // Dopo 15 minuti il token dell'interazione scade: in quel caso scrivo nel canale
     await status(payload).catch(() => channel?.send(payload));
   } catch (e) {
     console.error('Errore fusione:', e.stderr || e.message);
@@ -471,7 +490,6 @@ async function mergePlaylist(ctx, uid, tracks) {
   }
 }
 
-// ───────────── Comando: /pl ... oppure .pl ... ─────────────
 export const data = new SlashCommandBuilder()
   .setName('pl')
   .setDescription('La tua playlist personale')
@@ -512,7 +530,7 @@ async function pl(ctx, { text = '' } = {}) {
     }
     case 'personalizza': return ctx.reply(buildSetup(uid));
     default:
-      if (!getProfile(uid)) return ctx.reply(buildSetup(uid)); // prima volta
+      if (!getProfile(uid)) return ctx.reply(buildSetup(uid));
       return ctx.reply(buildPanel(uid, 0));
   }
 }
@@ -524,7 +542,6 @@ pl.desc = 'Gestisci la tua playlist personale';
 
 export default pl;
 
-// ───────────── Bottoni e menu del pannello ─────────────
 export const prefix = 'pl';
 export async function onComponent(i) {
   const [, action, uid, extra] = i.customId.split(':');

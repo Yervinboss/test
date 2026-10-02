@@ -1,19 +1,18 @@
 import {
   SlashCommandBuilder, EmbedBuilder, ActivityType,
-  ActionRowBuilder, ButtonBuilder, ButtonStyle
+  ActionRowBuilder, ButtonBuilder, ButtonStyle,
 } from 'discord.js';
 
 export const data = new SlashCommandBuilder()
   .setName('sp')
   .setDescription('Mostra le informazioni Spotify del brano in ascolto')
-  .addUserOption(option => 
-    option.setName('utente').setDescription('Utente di cui vuoi vedere la canzone (opzionale)').setRequired(false)
-  );
+  .addUserOption((option) =>
+    option.setName('utente').setDescription('Utente di cui vuoi vedere la canzone (opzionale)').setRequired(false));
 
 async function sp(ctx, { text = '' } = {}) {
   const isSlash = typeof ctx.isChatInputCommand === 'function';
   const guild = ctx.guild;
-  
+
   if (!guild) return ctx.reply('❌ Questo comando funziona solo nei server.');
 
   let targetUser = isSlash ? ctx.options.getUser('utente') : null;
@@ -33,7 +32,7 @@ async function sp(ctx, { text = '' } = {}) {
 
   const activities = member.presence?.activities || [];
   const spotifyActivity = activities.find(
-    act => act.type === ActivityType.Listening && (act.name === 'Spotify' || act.details)
+    (act) => act.type === ActivityType.Listening && (act.name === 'Spotify' || act.details),
   );
 
   if (!spotifyActivity) {
@@ -44,43 +43,33 @@ async function sp(ctx, { text = '' } = {}) {
   const songTitle = spotifyActivity.details || 'Brano sconosciuto';
   const artistName = spotifyActivity.state || 'Artista sconosciuto';
   const albumName = spotifyActivity.assets?.largeText || 'Album sconosciuto';
-  
+
   let albumImageUrl = null;
   if (spotifyActivity.assets && spotifyActivity.assets.largeImage) {
     let imageId = spotifyActivity.assets.largeImage;
-    if (imageId.startsWith('spotify:')) {
-      imageId = imageId.replace('spotify:', '');
-    }
+    if (imageId.startsWith('spotify:')) imageId = imageId.replace('spotify:', '');
     albumImageUrl = `https://i.scdn.co/image/${imageId}`;
   }
 
   const embed = new EmbedBuilder()
     .setColor(0x1db954)
-    .setAuthor({ 
-      name: `${member.user.username} sta ascoltando Spotify`, 
-      iconURL: member.user.displayAvatarURL({ extension: 'png' }) 
+    .setAuthor({
+      name: `${member.user.username} sta ascoltando Spotify`,
+      iconURL: member.user.displayAvatarURL({ extension: 'png' }),
     })
     .setTitle(songTitle)
     .setDescription(`🎤 **Artista:** ${artistName}\n💿 **Album:** ${albumName}`)
     .setThumbnail(albumImageUrl)
-    .setFooter({ text: 'Zeno Music ✦ 18K Bot', iconURL: guild.client.user.displayAvatarURL() })
+    .setFooter({ text: 'Zeno Music ✦ Zeno Bot', iconURL: guild.client.user.displayAvatarURL() })
     .setTimestamp();
 
   // Bottone con contatore stile TikTok (parte da 0)
-  const row = new ActionRowBuilder()
-    .addComponents(
-      new ButtonBuilder()
-        .setCustomId('like_sp_0')
-        .setLabel('0')
-        .setStyle(ButtonStyle.Secondary)
-        .setEmoji('⭐')
-    );
+  const row = new ActionRowBuilder().addComponents(
+    new ButtonBuilder().setCustomId('sp:like:0').setLabel('0').setStyle(ButtonStyle.Secondary).setEmoji('⭐'),
+  );
 
-  if (isSlash) {
-    await ctx.reply({ embeds: [embed], components: [row] });
-  } else {
-    await ctx.channel.send({ embeds: [embed], components: [row] });
-  }
+  if (isSlash) await ctx.reply({ embeds: [embed], components: [row] });
+  else await ctx.channel.send({ embeds: [embed], components: [row] });
 }
 
 sp.command = /^sp$/i;
@@ -89,3 +78,16 @@ sp.tags = ['utils', 'music'];
 sp.desc = 'Mostra una card embed del brano Spotify in ascolto';
 
 export default sp;
+
+// ───────────── Pulsante stellina ─────────────
+export const prefix = 'sp';
+export async function onComponent(i) {
+  const [, action, count] = i.customId.split(':');
+  if (action !== 'like') return;
+
+  const newCount = (parseInt(count, 10) || 0) + 1;
+  const newRow = new ActionRowBuilder().addComponents(
+    new ButtonBuilder().setCustomId(`sp:like:${newCount}`).setLabel(`${newCount}`).setStyle(ButtonStyle.Secondary).setEmoji('⭐'),
+  );
+  await i.update({ components: [newRow] });
+}

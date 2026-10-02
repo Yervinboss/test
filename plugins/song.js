@@ -9,9 +9,37 @@ import {
   ButtonStyle, AttachmentBuilder, MessageFlags,
 } from 'discord.js';
 
+// ───────────── TRACKER PROFILO ─────────────
+function trackPlay(userId, title, artist = 'Sconosciuto') {
+  try {
+    const PROFILES_DB = path.resolve('profiles_db.json');
+    let db = fs.existsSync(PROFILES_DB) ? JSON.parse(fs.readFileSync(PROFILES_DB, 'utf8')) : {};
+    if (!db[userId]) db[userId] = { stars: 0, topSongs: [] };
+
+    let cleanTitle = (title || 'Sconosciuto').trim();
+    let cleanArtist = (artist || 'Sconosciuto').trim();
+
+    if ((cleanArtist === 'Sconosciuto' || !cleanArtist) && cleanTitle.includes(' - ')) {
+      const parts = cleanTitle.split(' - ');
+      cleanArtist = parts[0].trim();
+      cleanTitle = parts.slice(1).join(' - ').trim();
+    }
+
+    const existing = db[userId].topSongs.find(s => s.title === cleanTitle && s.artist === cleanArtist);
+    if (existing) existing.count = (existing.count || 0) + 1;
+    else db[userId].topSongs.push({ title: cleanTitle, artist: cleanArtist, count: 1 });
+
+    if (typeof global.saveJsonAtomic === 'function') global.saveJsonAtomic(PROFILES_DB, db);
+    else fs.writeFileSync(PROFILES_DB, JSON.stringify(db, null, 2), 'utf8');
+  } catch (e) {
+    console.error('Errore tracking play:', e.message);
+  }
+}
+// ───────────── FINE TRACKER ─────────────
+
 const run = promisify(execFile);
 const PLAYLIST_DB = path.resolve('playlist_db.json');
-const MAX_UPLOAD = 10 * 1024 * 1024; // limite upload Discord senza boost
+const MAX_UPLOAD = 10 * 1024 * 1024;
 const YT_ID = /^[\w-]{11}$/;
 
 const readDb = (p) => {
@@ -27,7 +55,6 @@ export const data = new SlashCommandBuilder()
   .addStringOption((o) =>
     o.setName('query').setDescription('Titolo e artista').setRequired(true));
 
-// Funziona sia con /song sia con .song / .play
 async function song(ctx, { text } = {}) {
   const isSlash = Boolean(ctx.isChatInputCommand?.());
   const query = (isSlash ? ctx.options.getString('query') : text || '').trim();
@@ -70,7 +97,6 @@ song.desc = 'Cerca una canzone e scaricala';
 
 export default song;
 
-// Download con yt-dlp (execFile: nessuna shell, niente injection)
 async function download(id, kind) {
   const base = path.join(os.tmpdir(), `zeno_${id}_${Date.now()}`);
   const common = [
@@ -89,7 +115,6 @@ async function download(id, kind) {
   return found ? path.join(os.tmpdir(), found) : null;
 }
 
-// Bottoni sotto l'embed
 export const prefix = 'song';
 export async function onComponent(i) {
   const [, action, id] = i.customId.split(':');
@@ -100,7 +125,6 @@ export async function onComponent(i) {
   const embed = i.message.embeds[0];
   const title = embed?.title || 'Brano';
 
-  // ➕ Playlist (.PL)
   if (action === 'pl') {
     const url = `https://www.youtube.com/watch?v=${id}`;
     const duration = embed?.fields?.find((f) => f.name.includes('Durata'))?.value || '';
@@ -117,7 +141,6 @@ export async function onComponent(i) {
     return i.reply({ content: `✅ Aggiunto alla tua playlist (.PL)!\n📌 **${title}**`, flags: MessageFlags.Ephemeral });
   }
 
-  // 🎵 Audio / 🎬 Video
   if (action === 'audio' || action === 'video') {
     await i.deferReply();
     let file = null;
@@ -129,6 +152,8 @@ export async function onComponent(i) {
       if (fs.statSync(file).size > MAX_UPLOAD) {
         return i.editReply('❌ Il file supera il limite di upload di Discord (10 MB).');
       }
+
+      if (action === 'audio') trackPlay(i.user.id, title);
 
       await i.editReply({
         content: `${action === 'audio' ? '🎵' : '🎬'} **${title}**`,

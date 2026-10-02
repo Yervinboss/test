@@ -177,3 +177,94 @@ guild_id[NUMBER_TYPE_COERCE]: Value "id_del_server" is not snowflake.
 [2026-09-30T13:47:38.348Z] [INFO] Caricati con successo 14 comandi plugin (0 falliti).
 [2026-09-30T13:47:39.723Z] [INFO] Zeno connesso a Discord come 18K-BOT#1725.
 [2026-09-30T17:11:21.362Z] [INFO] Arresto richiesto (SIGINT).
+[2026-09-30T17:19:17.969Z] [INFO] Caricati con successo 14 comandi plugin (0 falliti).
+[2026-09-30T17:19:20.095Z] [INFO] Zeno connesso a Discord come 18K-BOT#1725.
+[2026-09-30T17:22:38.536Z] [INFO] Arresto richiesto (SIGINT).
+[2026-09-30T17:22:47.495Z] [INFO] Caricati con successo 14 comandi plugin (0 falliti).
+[2026-09-30T17:22:48.781Z] [INFO] Zeno connesso a Discord come 18K-BOT#1725.
+[2026-09-30T17:25:16.104Z] [INFO] Arresto richiesto (SIGINT).
+[2026-09-30T17:25:22.770Z] [INFO] Caricati con successo 15 comandi plugin (0 falliti).
+[2026-09-30T17:25:23.769Z] [INFO] Zeno connesso a Discord come 18K-BOT#1725.
+[2026-09-30T17:29:35.429Z] [INFO] Arresto richiesto (SIGINT).
+[2026-09-30T17:32:22.230Z] [INFO] Caricati con successo 15 comandi plugin (0 falliti).
+[2026-09-30T17:32:23.245Z] [INFO] Zeno connesso a Discord come 18K-BOT#1725.
+[2026-09-30T17:38:13.899Z] [INFO] Arresto richiesto (SIGINT).
+[2026-09-30T17:40:41.335Z] [INFO] Caricati con successo 16 comandi plugin (0 falliti).
+[2026-09-30T17:40:42.509Z] [INFO] Zeno connesso a Discord come 18K-BOT#1725.
+[2026-09-30T17:48:02.952Z] [INFO] Arresto richiesto (SIGINT).
+[2026-09-30T17:48:21.379Z] [INFO] Caricati con successo 17 comandi plugin (0 falliti).
+[2026-09-30T17:48:22.346Z] [INFO] Zeno connesso a Discord come zenobot#1725.
+[2026-09-30T17:50:38.201Z] [INFO] Arresto richiesto (SIGINT).
+[2026-09-30T17:50:56.558Z] [INFO] Caricati con successo 17 comandi plugin (0 falliti).
+[2026-09-30T17:50:57.544Z] [INFO] Zeno connesso a Discord come zenobot#1725.
+[2026-09-30T17:54:28.079Z] [INFO] Arresto richiesto (SIGINT).
+[2026-09-30T17:54:55.894Z] [INFO] Caricati con successo 17 comandi plugin (0 falliti).
+[2026-09-30T17:54:56.927Z] [INFO] Zeno connesso a Discord come zenobot#1725.
+[2026-09-30T20:39:21.938Z] [INFO] Arresto richiesto (SIGINT).
+[2026-09-30T20:39:55.372Z] [INFO] Caricati con successo 18 comandi plugin (0 falliti).
+[2026-09-30T20:39:56.312Z] [INFO] Zeno connesso a Discord come zenobot#1725.
+[2026-09-30T20:43:26.638Z] [INFO] Arresto richiesto (SIGINT).
+[2026-09-30T20:43:46.684Z] [INFO] Caricati con successo 19 comandi plugin (0 falliti).
+[2026-09-30T20:43:47.574Z] [INFO] Zeno connesso a Discord come zenobot#1725.
+[2026-09-30T20:44:25.909Z] [INFO] Caricati con successo 19 comandi plugin (0 falliti).
+[2026-09-30T20:47:26.592Z] [INFO] Arresto richiesto (SIGINT).
+[2026-09-30T20:47:59.384Z] [INFO] Caricati con successo 19 comandi plugin (0 falliti).
+[2026-09-30T20:48:05.344Z] [INFO] Zeno connesso a Discord come zenobot#1725.
+[2026-09-30T20:50:00.981Z] [INFO] Arresto richiesto (SIGINT).
+[2026-09-30T20:50:23.251Z] [INFO] Caricati con successo 19 comandi plugin (0 falliti).
+[2026-09-30T20:50:24.395Z] [INFO] Zeno connesso a Discord come zenobot#1725.
+[2026-09-30T20:52:29.740Z] [INFO] Arresto richiesto (SIGINT).
+[2026-09-30T20:52:57.365Z] [INFO] Caricati con successo 20 comandi plugin (0 falliti).
+[2026-09-30T20:52:59.158Z] [INFO] Zeno connesso a Discord come zenobot#1725.
+[2026-09-30T20:54:49.014Z] [INFO] Arresto richiesto (SIGINT).
+[2026-09-30T20:55:28.433Z] [ERROR] Plugin Error [kick.js]: Unexpected end of input
+[2026-09-30T20:55:28.935Z] [INFO] Caricati con successo 19 comandi plugin (1 falliti).
+[2026-09-30T20:55:30.103Z] [INFO] Zeno connesso a Discord come zenobot#1725.
+[2026-09-30T20:55:30.570Z] [INFO] Arresto richiesto (SIGINT).
+[2026-09-30T20:56:14.737Z] [INFO] Caricati con successo 20 comandi plugin (0 falliti).
+[2026-09-30T20:56:15.665Z] [INFO] Zeno connesso a Discord come zenobot#1725.
+[2026-09-30T20:57:37.799Z] [INFO] Arresto richiesto (SIGINT).
+[2026-09-30T20:58:03.169Z] [INFO] Caricati con successo 21 comandi plugin (0 falliti).
+[2026-09-30T20:58:04.474Z] [INFO] Zeno connesso a Discord come zenobot#1725.
+[2026-10-01T19:57:16.397Z] [INFO] Caricati con successo 21 comandi plugin (0 falliti).
+[2026-10-01T19:57:17.996Z] [INFO] Zeno connesso a Discord come zenobot#1725.
+[2026-10-01T20:21:38.380Z] [INFO] Arresto richiesto (SIGINT).
+[2026-10-01T20:21:44.623Z] [INFO] Caricati con successo 22 comandi plugin (0 falliti).
+[2026-10-01T20:21:45.438Z] [INFO] Zeno connesso a Discord come zenobot#1725.
+[2026-10-01T20:29:30.686Z] [INFO] Arresto richiesto (SIGINT).
+[2026-10-01T20:29:39.362Z] [INFO] Caricati con successo 22 comandi plugin (0 falliti).
+[2026-10-01T20:29:40.170Z] [INFO] Zeno connesso a Discord come zenobot#1725.
+[2026-10-01T20:32:07.983Z] [ERROR] Interaction Error: Unknown interaction
+[2026-10-01T20:33:24.889Z] [INFO] Arresto richiesto (SIGINT).
+[2026-10-01T20:33:32.711Z] [INFO] Caricati con successo 23 comandi plugin (0 falliti).
+[2026-10-01T20:33:33.753Z] [INFO] Zeno connesso a Discord come zenobot#1725.
+[2026-10-01T20:39:53.495Z] [INFO] Caricati con successo 23 comandi plugin (0 falliti).
+[2026-10-01T20:58:53.944Z] [INFO] Caricati con successo 24 comandi plugin (0 falliti).
+[2026-10-01T20:58:55.200Z] [INFO] Zeno connesso a Discord come zenobot#1725.
+[2026-10-01T21:00:15.422Z] [INFO] Arresto richiesto (SIGINT).
+[2026-10-01T21:00:34.639Z] [INFO] Caricati con successo 24 comandi plugin (0 falliti).
+[2026-10-01T21:00:35.837Z] [INFO] Zeno connesso a Discord come zenobot#1725.
+[2026-10-01T21:01:14.497Z] [ERROR] Plugin Execution Error [tag.js / tag]: interaction.deferReply is not a function
+[2026-10-01T22:33:53.320Z] [ERROR] Interaction Error: Unknown interaction
+[2026-10-01T22:33:56.416Z] [ERROR] Interaction Error: Interaction has already been acknowledged.
+[2026-10-01T22:34:31.544Z] [ERROR] Interaction Error: Unknown interaction
+[2026-10-01T22:57:25.588Z] [ERROR] Interaction Error: Unknown interaction
+[2026-10-02T05:15:56.690Z] [INFO] Caricati con successo 24 comandi plugin (0 falliti).
+[2026-10-02T05:15:58.491Z] [INFO] Zeno connesso a Discord come zenobot#1725.
+[2026-10-02T05:18:02.192Z] [INFO] Arresto richiesto (SIGINT).
+[2026-10-02T05:18:09.880Z] [INFO] Caricati con successo 24 comandi plugin (0 falliti).
+[2026-10-02T05:18:12.173Z] [INFO] Zeno connesso a Discord come zenobot#1725.
+[2026-10-02T05:21:08.175Z] [INFO] Arresto richiesto (SIGINT).
+[2026-10-02T05:21:43.749Z] [INFO] Caricati con successo 24 comandi plugin (0 falliti).
+[2026-10-02T05:21:45.211Z] [INFO] Zeno connesso a Discord come zenobot#1725.
+[2026-10-02T05:27:29.898Z] [INFO] Arresto richiesto (SIGINT).
+[2026-10-02T05:27:38.775Z] [INFO] Caricati con successo 24 comandi plugin (0 falliti).
+[2026-10-02T05:27:39.834Z] [INFO] Zeno connesso a Discord come zenobot#1725.
+[2026-10-02T05:28:34.306Z] [INFO] Arresto richiesto (SIGINT).
+[2026-10-02T05:28:51.067Z] [INFO] Caricati con successo 24 comandi plugin (0 falliti).
+[2026-10-02T05:28:52.553Z] [INFO] Zeno connesso a Discord come zenobot#1725.
+[2026-10-02T16:45:46.953Z] [ERROR] Uncaught Exception: Opening handshake has timed out
+[2026-10-02T21:01:52.134Z] [INFO] Arresto richiesto (SIGINT).
+[2026-10-02T21:01:55.511Z] [INFO] Caricati con successo 24 comandi plugin (0 falliti).
+[2026-10-02T21:01:57.104Z] [INFO] Zeno connesso a Discord come zenobot#1725.
+[2026-10-02T21:14:56.805Z] [INFO] Arresto richiesto (SIGINT).
